@@ -398,7 +398,7 @@ button, input {
     60% {transform: translateY(-15px);}
 }
 
-.fa-down {
+.fa-arrow-down {
     display: flex;
     position: fixed;
     bottom: 130px;
