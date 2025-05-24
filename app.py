@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request
 import os, random
 from together import Together 
-from dotenv import load_dotenv
 
-load_dotenv()
 keys = os.environ.get("TOGETHER_APIKEY").split(',')
 systemPrompt = """
 You’re a linguistic genius, sharper than the Oxford Dictionary!
@@ -69,4 +67,4 @@ def get_definition():
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 10000))  # Render default port
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)
