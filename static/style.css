@@ -11,6 +11,23 @@
     font-family: "Lexend", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 hr {
     border: 0.5px solid #00d5ff2f;
@@ -39,6 +56,15 @@ body {
     background-color: var(--background-dark-navy);
 }
 
+em, i {
+    font-style: italic;
+    color: var(--secondary-electric-blue);
+}
+
+b, bold {
+    color: var(--primary-neon-pink);
+}
+
 .bg {
     position: fixed;
     top: 0;
@@ -64,11 +90,11 @@ p {
     color: var(--accent-bright-white);
 }
 
-button:focus {
+button:focus, input:focus {
     outline: none;
 }
 
-button {
+button, input {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -90,7 +116,7 @@ button {
     align-items: center;
     justify-content: center;
     text-align: center;
-    overflow: auto;
+    overflow: hidden;
     z-index: 2;
     transition: border-radius 0.3s ease-in-out;
 }
@@ -285,6 +311,111 @@ button {
 
 
 
+#inputContainer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    bottom: 10px;
+    left: 10px;
+    width: 95%;
+    padding: 10px;
+    color: #fff;
+    z-index: 5;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit-btn {
+    border-radius: 100%;
+    padding: 10px;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#inputBox {
+    width: 88%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 14px;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+#inputBox:focus, #submit-btn:hover, #inputBox:hover{
+    border: 1px solid #00d5ffb6;
+}
+
+
+
+
+#resultContainer {
+    position: fixed;
+    top: 48px;
+    /* bottom: 60px; */
+    width: 95%;
+    padding: 10px;
+    color: #fff;
+    text-align: left;
+    overflow: auto;
+    height: calc(100% - 140px);
+    z-index: 3;
+}
+
+
+
+
+
+#titlehead {
+    display: flex;
+    position: fixed;
+    top: 3px;
+}
+
+.containerHR {
+    display: flex;
+    position: fixed;
+    bottom: 70px;
+}
+.containerHR2 {
+    display: flex;
+    position: fixed;
+    top: 30px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+.fa-arrow-down {
+    display: flex;
+    position: fixed;
+    bottom: 130px;
+    left: 15%;
+    transform: translateX(-50%);
+    color: var(--primary-neon-pink);
+    font-size: 20rem;
+    animation: bounce 2s infinite;
+}
+
+.wait {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+}
 
 @media (max-width: 600px) {
   .container {
@@ -294,6 +425,10 @@ button {
 
   .drawer {
     border-radius: 0px 8px 8px 0px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
   }
 }
 

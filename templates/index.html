@@ -22,8 +22,16 @@
 
 
         <div class="container" id="container">
-            <h1>Hello from Flask on Render! 🌟</h1>
-            <p>This is your rendered index.html page. Enjoy building your website! 🚀</p>
+            <h1 id="titlehead">AI Dictionary</h1>
+            <hr class="containerHR2">
+            <div id="resultContainer">
+                <i class="fas fa-arrow-down"></i>
+            </div>
+            <hr class="containerHR">
+            <div id="inputContainer">
+                <input id="inputBox" placeholder="type a word or sentence..."></input>
+                <button id="submit-btn" onclick="getdef()"><i class="fas fa-search"></i></button>
+            </div>
         </div>
         
         <button class="sidebar-btn" id="sidebar-btn">
