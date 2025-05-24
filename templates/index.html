@@ -18,11 +18,42 @@
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body>
-    <div class="container" id="container">
-        <h1>Hello from Flask on Render! 🌟</h1>
-        <p>This is your rendered index.html page. Enjoy building your website! 🚀</p>
-    </div>
+    <div class="bg">
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+        <div class="container" id="container">
+            <h1>Hello from Flask on Render! 🌟</h1>
+            <p>This is your rendered index.html page. Enjoy building your website! 🚀</p>
+        </div>
+        
+        <button class="sidebar-btn" id="sidebar-btn">
+            <h4 class="label">History</h4>
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <button class="profile-btn" id="profile-btn">
+            <h4 class="label">Profile</h4>
+            <i class="fas fa-user"></i>
+        </button>
+
+        <div class="profile" id="profile">
+            <hr>
+            <h3 id="login">Login</h3>
+            <hr>
+        </div>
+
+
+        <div class="drawer" id="drawer">
+            <br>
+            <div class="history-list" id="history-list" style="overflow-y: auto; height: calc(100% - 30px); scroll-behavior: smooth;">
+    
+            </div>
+            <br>
+        </div>
+    
+        
+
+
+    </div>
 </body>
 </html>

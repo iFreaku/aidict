@@ -1,36 +1,30 @@
-function createBlob(color, size) {
-    const blob = document.createElement("div");
-    blob.style.position = "absolute";
-    blob.style.width = `${size}vmax`;
-    blob.style.height = `${size}vmax`;
-    blob.style.borderRadius = "50%";
-    blob.style.background = `radial-gradient(circle, ${color}, transparent 70%)`;
-    blob.style.filter = "blur(80px)";
-    blob.style.opacity = "0.6";
-    blob.style.zIndex = "-1";
-    document.body.appendChild(blob);
+// Consts
 
-    return {
-        element: blob,
-        radius: 50 + Math.random() * 200, // random radius between 50 and 250 px
-        angle: Math.random() * 2 * Math.PI, // random initial angle
-        speed: (Math.random() * 0.01 + 0.005) * (Math.random() < 0.5 ? 1 : -1) // random speed & direction
-    };
-}
 
-function animate() {
-    blobs.forEach(blob => {
-        blob.angle += blob.speed;
 
-        const x = centerX + blob.radius * Math.cos(blob.angle);
-        const y = centerY + blob.radius * Math.sin(blob.angle);
 
-        blob.element.style.left = `${x}px`;
-        blob.element.style.top = `${y}px`;
-    });
 
-    requestAnimationFrame(animate);
-}
+// Functions -------------
 
-blobs.push(createBlob("#ff6ec4", 60));
-blobs.push(createBlob("#7873f5", 60));
+document.getElementById('sidebar-btn').addEventListener('click', function() {
+  this.classList.toggle('show-label');
+  document.getElementById('drawer').classList.toggle('open');
+  const icon = this.querySelector('i');
+  if (this.classList.contains('show-label')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-times');
+  } else {
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+  }
+});
+
+document.getElementById('profile-btn').addEventListener('click', function() {
+    this.classList.toggle('show-label');
+    document.getElementById('profile').classList.toggle('open');
+    
+});
+
+
+
+// Calling the Functions ------------------
