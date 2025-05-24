@@ -1,0 +1,2 @@
+# aidict
+AI Dictionary
